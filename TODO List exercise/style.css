@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    align-items: center;
+    background-color: #ffffff;
+    background-image: linear-gradient(45deg, #ececec 0%, #ffffff 100%);
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input{
+    height: 60px;
+    border: none;
+    padding: 1em;
+    border-radius: 10px;
+    background: #fbfbfb;
+    box-shadow: inset 0 0 15px 0px rgba(0,0,0,0.15), 0 0 20px 5px white;
+    border: 1px solid white;
+    width: 500px;
+    transition:  0.1s ease-in;
+    margin: 1em;
+    font-size: 1.4em;
+    }
+
+input:focus{
+    outline: none;
+    border: 3px solid #00ced8;
+    box-shadow: 0 0 10px 3px rgba(0,206,216,0.3);
+}
+.caja-formulario{
+    width: 400px;
+    margin: 0 400px;
+    margin-top: 5em;
+    box-shadow:0px 3px 6px 0px rgba(0,0,0,0.3), 0px 6px 12px 0px rgba(0,0,0,0.15);
+    border-radius: 15px;
+    background: white;
+    overflow: hidden;
+    
+}
+.formulario{
+    align-items: center;
+    display: inline;
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    color: #3c3c3c;
+    text-align: center;
+    margin: 3em 0 1em;
+    font-family: 'Amaranth', sans-serif;
+    font-size: xxx-large;
+}
+
+.fas{
+    font-size: 35px;
+    transition: 0.1s ease-in-out;
+}
+
+.fas:hover{
+    color: lightseagreen;
+}
+
+button{
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input, button, submit{
+    border:none;
+    background: none;
+}
+
+button:focus{
+    outline: 0;
+}
