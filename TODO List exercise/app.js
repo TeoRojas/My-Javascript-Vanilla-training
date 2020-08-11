@@ -1,15 +1,22 @@
+//Selectors
 let texto = document.getElementById('input-text').value;
 let button = document.getElementById('add-btn');
+let buttonDelete = document.querySelector('.liBtn');
+
+//Event Listeners
 
 
+
+//Functions
 button.addEventListener('click', function(e){
     e.preventDefault();
     texto = document.getElementById('input-text').value;
-    if(texto == 'Introduce una nueva tarea' ||  texto == 'Debes escribir una tarea'){
+    if(texto == '' ||  texto == 'Debes escribir una tarea'){
         document.getElementById('input-text').value = 'Debes escribir una tarea';
     }
     else{
         insertLiInDom(createLi(texto));
+        document.getElementById('input-text').value = '';
     }
 });
 
@@ -28,6 +35,8 @@ function createLi(texto){
 
 function createButtonCheck(){
     const newButton = document.createElement('button');
+    newButton.classList.add('liBtn');
+    newButton.addEventListener('click', deleteLi);
     const newI = document.createElement('i');
     newI.classList.add('fas');
     newI.classList.add('fa-check');
@@ -41,8 +50,13 @@ button.addEventListener('mouseover', function(){
 });
 
 
-button.addEventListener('mouseout', function(){
-    button.children[0].classList.remove('icon-blue');
-})
+function deleteLi(e){
+    e.target.parentElement.remove();
+};
+
+
+
+
+
 
 
