@@ -51,7 +51,12 @@ button.addEventListener('mouseover', function(){
 
 
 function deleteLi(e){
-    e.target.parentElement.remove();
+    const li = e.target.parentElement;
+    console.log(li);
+    li.classList.add('fall');
+    li.addEventListener('transitionend',function(){
+        li.remove();
+    });
 };
 
 
