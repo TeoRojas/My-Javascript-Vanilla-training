@@ -32,7 +32,7 @@ input{
     border: 1px solid white;
     width: 500px;
     transition:  0.05s ease-in-out;
-    margin: 10em 1em;
+    margin: 7em 1em 2em;
     padding: 0 40px;
     box-shadow: 
         -5px -3px 16px rgba(253, 254, 254, 1), 
@@ -107,6 +107,8 @@ button{
     background:rgb(226,230,233) !important;    
     transition: 0.3s ease-in-out;
     margin-left: 25px;
+    width: 55px;
+    height: 55px;
 }
 
 input, button, submit{
@@ -124,4 +126,22 @@ button:hover{
         -6px -6px 10px rgba(255, 255, 255, .5),
         6px 6px 8px rgba(255, 255, 255, .075),
         6px 6px 10px rgba(0, 0, 0, .15); 
+}
+
+.task-list{
+    margin: 0 auto;
+    width: 85%;
+}
+
+.task-list ul{
+    display: inline-grid;
+    width: 100%;
+}
+
+.task-list li{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    align-items: center;
+    padding: 0.5em 0;
 }

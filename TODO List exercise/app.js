@@ -1,24 +1,48 @@
 let texto = document.getElementById('input-text').value;
-let button = document.getElementById("add-btn");
+let button = document.getElementById('add-btn');
 
 
 button.addEventListener('click', function(e){
     e.preventDefault();
     texto = document.getElementById('input-text').value;
-    console.log(texto);
+    if(texto == 'Introduce una nueva tarea' ||  texto == 'Debes escribir una tarea'){
+        document.getElementById('input-text').value = 'Debes escribir una tarea';
+    }
+    else{
+        insertLiInDom(createLi(texto));
+    }
 });
 
-console.log(button.children[0].classList);
+function insertLiInDom(li){
+    const ul = document.getElementById('list');
+    ul.appendChild(li);
+}
 
-button.addEventListener('onmouseover', function(e){
-    e.preventDefault();
+function createLi(texto){
+    const newLi = document.createElement('li');
+    texto = document.createTextNode(texto);
+    newLi.appendChild(texto);
+    newLi.appendChild(createButtonCheck());
+    return newLi;
+};
+
+function createButtonCheck(){
+    const newButton = document.createElement('button');
+    const newI = document.createElement('i');
+    newI.classList.add('fas');
+    newI.classList.add('fa-check');
+    newButton.appendChild(newI);
+    return newButton;
+}
+
+
+button.addEventListener('mouseover', function(){
     button.children[0].classList.add('icon-blue');
-    console.log('estoy encima del botón');
 });
 
-button.addEventListener('onmouseout', function(e){
-    e.stopPropagation;
-    button.children[0].classList.remove('icon-blue');
-    console.log('estoy fuera del botón');
 
+button.addEventListener('mouseout', function(){
+    button.children[0].classList.remove('icon-blue');
 })
+
+
